@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "wrap_sc.h"
 
 int main()
@@ -30,7 +31,7 @@ int main()
 			exit(EXIT_FAILURE);	
 		}
 
-		check_fifo(&fd_fifo, &fd_outfile, read_fds_ptr);
+		check_fifo(&fd_fifo, &fd_outfile, readfds_ptr);
 	}	
 	
 	return 0;
