@@ -4,7 +4,6 @@
 #include "wrap_sc.h"
 
 
-
 void make_fifo(int *fifo_fd, const cahr *fifo_file_name)
 {
 	// create fifo
@@ -25,5 +24,12 @@ void make_fifo(int *fifo_fd, const cahr *fifo_file_name)
 
 void create_output_file(int *outfile_fd, const char *outfile_name)
 {
-
+	*outfile_fd = open(outfile_name, O_CREAT | O_RDWR | O_TRUNC, 
+						S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	
+	if(*outfile_fd == -1)
+	{
+		perror("Error open/create output file!\n"); 
+		exit(EXIT_FAILURE);
+	}
 }
