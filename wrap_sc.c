@@ -33,3 +33,19 @@ void create_output_file(int *outfile_fd, const char *outfile_name)
 		exit(EXIT_FAILURE);
 	}
 }
+
+void check_fifo(int *fd_fifo, fd_set *readfds_ptr)
+{
+	ssize_t bytes_read = 0;
+	char buffer[100];
+		
+	if(FD_ISSET(fd_fifo, readfds_ptr))
+	{
+		// read bytes
+		bytes_read = read(fd_fifo, buffer, sizeof(buffer) -1);
+		if(bytes_read > 0)
+		{
+
+		}
+	}
+}
