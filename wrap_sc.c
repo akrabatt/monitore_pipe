@@ -22,3 +22,8 @@ void make_fifo(int *fifo_fd, const cahr *fifo_file_name)
 		exit(EXIT_FAILURE); 
 	}
 }
+
+void create_output_file(int *outfile_fd, const char *outfile_name)
+{
+
+}
